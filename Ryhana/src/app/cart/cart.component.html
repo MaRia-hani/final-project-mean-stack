@@ -1,0 +1,36 @@
+<div class="cart-dropdown">
+  <button class="cart-icon">
+    🛒
+    <span class="cart-count">{{getNotificationNumber()}}</span>
+  </button>
+  <div class="cart-preview">
+      @if (userCart && userCart.items.length > 0) {
+        @for(item of userCart.items; track $index){
+          <div class="cart-item">
+            <div>
+              <strong>{{item.name}}</strong>
+            </div>
+            <div class="cart-controls">
+              <span>${{item.price}}</span>
+              <div class="quantity">
+                <button (click)="removeOneItem(item)">-</button>
+                <span>{{item.quantity}}</span>
+                <button (click)="addOneItem(item)">+</button>
+              </div>
+            </div>
+          </div>
+        }
+
+        <div class="cart-total">
+          <span>Total:</span>
+          <strong id="total-price">${{userCart.totalPrice | number:'1.2-2'}}</strong>
+        </div>
+
+        <a href="payment.html" class="checkout-button">Checkout</a>
+      } @else{
+        <div class="cart-item">
+          <p>No items to be displayed</p>
+        </div>
+      }
+      </div>
+  </div>

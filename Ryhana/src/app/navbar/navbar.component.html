@@ -1,0 +1,32 @@
+
+
+<nav class="navbar">
+  <div class="navbar-logo">
+    <img src="logo.png" alt="Logo" />
+    <ul class="navbar-links">
+      <li><a routerLink="">Home</a></li>
+      <li><a routerLink="products">Our Products</a></li>
+    </ul>
+  </div>
+
+  
+
+  <div class="navbar-buttons">
+    @if (isLoggedIn()) {
+        <a class="btn welcome-text">
+            Welcome, {{ localStorage.getItem('userName') }}!
+        </a>
+        <app-cart></app-cart>
+        <button class="btn btn-outline" (click)="logout()">
+            Logout
+        </button>
+    } @else {
+        <a class="btn btn-outline" routerLink="/user/register">
+          Register
+        </a>
+        <a class="btn btn-filled" routerLink="/user/login">
+          Login
+        </a>
+    }
+  </div>
+</nav>

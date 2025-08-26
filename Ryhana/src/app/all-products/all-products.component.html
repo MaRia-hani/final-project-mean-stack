@@ -1,0 +1,24 @@
+<h1>Our Products</h1>
+<div class="products-container">
+    @for (product of products; track $index) {
+        <div class="card">
+            <img [src]="product.img" [alt]="product.name">
+            <div class="card-content">
+                <div class="product-header">
+                <div class="product-name">{{product.name}}</div>
+                <div class="product-price">${{product.price}}</div>
+                </div>
+                <div class="description">{{product.desc}}</div>
+                <div class="info">
+                    Category: {{product.category}}<br>
+                    Size: {{product.size}}<br>
+                    Quantity: {{product.quantity}}<br>
+                    <span class="instock">{{product.inStock?'In Stock':'Out of Stock'}}</span>
+                </div>
+            </div>
+            <div class="card-buttons">
+                <button class="add-cart" (click)="addToCart(product)">Add to Cart</button>
+            </div>
+        </div>
+    }
+</div>

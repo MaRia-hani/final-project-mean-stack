@@ -1,0 +1,108 @@
+/* Root colors & fonts */
+:root {
+  --primary-color: #d89abf;
+  --secondary-color: #fff0f6;
+  --text-color: #333;
+  --button-color: #ffffff;
+  --button-hover: #9b2f80;
+  --background: #fff;
+  --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  background-color: var(--background);
+  color: var(--text-color);
+}
+
+/* Container */
+.welcome-container {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Hero section */
+.hero {
+  background: url('../../../public/background.webp') no-repeat center center/cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.24); /* Black overlay with 50% opacity */
+    z-index: 0;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: #555;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-button {
+  font-family: 'Aptos', sans-serif;
+  background-color: var(--button-color);
+  color: white;
+  text-decoration: none;
+  padding: 12px 30px;
+  border-radius: 25px;
+  border: 2px solid white;
+  font-size: 1.5rem;
+  transition: background-color 0.3s ease;
+  position: relative;
+  font-weight: bold;
+  z-index: 2;
+}
+
+.cta-button:hover {
+  background-color: var(--button-hover);
+  text-decoration: underline;
+}
+
+/* About Section */
+.about-section {
+  padding: 60px 30px;
+  background-color: #fdf9fb;
+  text-align: center;
+}
+
+.about-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: var(--primary-color);
+}
+
+.about-section p {
+  max-width: 800px;
+  margin: 10px auto;
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.6;
+}
